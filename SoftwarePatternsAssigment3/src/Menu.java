@@ -100,7 +100,7 @@ public class Menu extends JFrame{
 					//if user select ADMIN----------------------------------------------------------------------------------------------
 					if(user.equals("Administrator")	)
 					{
-						this.newAdminFrame();
+						this.adminLogon();
 						}
 					//----------------------------------------------------------------------------------------------------------------
 					
@@ -180,7 +180,7 @@ public class Menu extends JFrame{
 					//-----------------------------------------------------------------------------------------------------------------------
 				}
 
-				private void newAdminFrame() {
+				private void adminLogon() {
 
 					boolean loop = true, loop2 = true;
 					boolean cont = false;
