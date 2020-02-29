@@ -291,12 +291,6 @@ public class Menu extends JFrame{
 					password = "";
 				
 					CustomerID = "ID"+PPS ;
-					
-				
-					
-					
-					
-					
 					add.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							f1.dispose();
@@ -314,9 +308,6 @@ public class Menu extends JFrame{
 								 loop = false;
 							 }
 							}
-							
-							
-							
 							
 						    ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 									Customer customer = new Customer(PPS, surname, firstName, DOB, CustomerID, password, accounts);
@@ -574,7 +565,7 @@ public class Menu extends JFrame{
 		interestButton.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
 
-				boolean loop = true;
+				//boolean loop = true;
 				
 				boolean found = false;
 			
@@ -604,16 +595,13 @@ public class Menu extends JFrame{
 			    if(found == false)
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
-			    	if (reply == JOptionPane.YES_OPTION) {
-			    		loop = true;
-			    	}
-			    	else if(reply == JOptionPane.NO_OPTION)
-			    	{
+			    	if (reply == JOptionPane.NO_OPTION) {
 			    		f.dispose();
-			    		loop = false;
+			    		break;
 			    	
 			    		admin();
 			    	}
+			    	
 			    }  
 			    else
 			    {
