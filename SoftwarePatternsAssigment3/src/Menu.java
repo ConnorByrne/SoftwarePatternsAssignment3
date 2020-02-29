@@ -43,8 +43,7 @@ public class Menu extends JFrame{
 		driver.menuStart();
 	}
 	
-	public void menuStart()
-	{
+	public void menuStart(){
 		   /*The menuStart method asks the user if they are a new customer, an existing customer or an admin. It will then start the create customer process
 		  if they are a new customer, or will ask them to log in if they are an existing customer or admin.*/
 		
@@ -413,14 +412,13 @@ public class Menu extends JFrame{
 		content.add(navigatePanel);
 		content.add(summaryPanel);	
 		content.add(deleteCustomerPanel);
-	//	content.add(deleteAccountPanel);
 		content.add(returnPanel);
 		
 		
 		bankChargesButton.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
 				
-				boolean loop = true;
+				//boolean loop = true;
 				
 				boolean found = false;
 			
@@ -433,7 +431,7 @@ public class Menu extends JFrame{
 				}
 				else
 				{
-			    while(loop)
+			    while(true)
 			    {
 			    Object customerID = JOptionPane.showInputDialog(f, "Customer ID of Customer You Wish to Apply Charges to:");
 			    
@@ -443,22 +441,16 @@ public class Menu extends JFrame{
 			    	{
 			    		found = true;
 			    		customer = aCustomer; 
-			    		loop = false;
+			    		break;
 			    	}					    	
 			    }
 			    
-			    if(found == false)
-			    {
+			    if(found == false){
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
-			    	if (reply == JOptionPane.YES_OPTION) {
-			    		loop = true;
-			    	}
-			    	else if(reply == JOptionPane.NO_OPTION)
-			    	{
+			    	if (reply == JOptionPane.NO_OPTION) {
 			    		f.dispose();
-			    		loop = false;
-			    	
 			    		admin();
+			    		break;
 			    	}
 			    }  
 			    else
