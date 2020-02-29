@@ -578,7 +578,7 @@ public class Menu extends JFrame{
 				}
 				else
 				{
-			    while(loop)
+			    while(true)
 			    {
 			    Object customerID = JOptionPane.showInputDialog(f, "Customer ID of Customer You Wish to Apply Interest to:");
 			    
@@ -588,7 +588,7 @@ public class Menu extends JFrame{
 			    	{
 			    		found = true;
 			    		customer = aCustomer; 
-			    		loop = false;
+			    		break;
 			    	}					    	
 			    }
 			    
@@ -597,9 +597,10 @@ public class Menu extends JFrame{
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.NO_OPTION) {
 			    		f.dispose();
+			    		admin();
 			    		break;
 			    	
-			    		admin();
+			    		
 			    	}
 			    	
 			    }  
