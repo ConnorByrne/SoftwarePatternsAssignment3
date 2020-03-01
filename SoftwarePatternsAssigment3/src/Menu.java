@@ -233,45 +233,8 @@ public class Menu extends JFrame{
 		
 		deleteAccount.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
-	boolean found = true, loop = true;
-				
-				
-				
-				
-					 {
-						    Object customerID = JOptionPane.showInputDialog(frame1, "Customer ID of Customer from which you wish to delete an account");
-						    
-						    for (Customer aCustomer: customerList){
-						    	
-						    	if(aCustomer.getCustomerID().equals(customerID))
-						    	{
-						    		found = true;
-						    		customer = aCustomer; 
-						    		loop = false;
-						    	}					    	
-						    }
-						    
-						    if(found == false)
-						    {
-						    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
-						    	if (reply == JOptionPane.YES_OPTION) {
-						    		loop = true;
-						    	}
-						    	else if(reply == JOptionPane.NO_OPTION)
-						    	{
-						    		frame1.dispose();
-						    		loop = false;
-						    	
-						    		admin();
-						    	}
-						    }  
-						    else
-						    {
-						    	//Here I would make the user select a an account to delete from a combo box. If the account had a balance of 0 then it would be deleted. (I do not have time to do this)
-						    }
-						    
-						    
-				}}
+				deleteAccount();
+			}
 			
 	     });		
 		returnButton.addActionListener(new ActionListener(  ) {
@@ -282,6 +245,52 @@ public class Menu extends JFrame{
 	     });		
 	}
 	
+	protected void deleteAccount() {
+
+		boolean found = true, loop = true;
+					
+					
+					
+					
+						 {
+							    Object customerID = JOptionPane.showInputDialog(frame1, "Customer ID of Customer from which you wish to delete an account");
+							    
+							    for (Customer aCustomer: customerList){
+							    	
+							    	if(aCustomer.getCustomerID().equals(customerID))
+							    	{
+							    		found = true;
+							    		customer = aCustomer; 
+							    		loop = false;
+							    	}					    	
+							    }
+							    
+							    if(found == false)
+							    {
+							    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
+							    	if (reply == JOptionPane.YES_OPTION) {
+							    		loop = true;
+							    	}
+							    	else if(reply == JOptionPane.NO_OPTION)
+							    	{
+							    		frame1.dispose();
+							    		loop = false;
+							    	
+							    		admin();
+							    	}
+							    }  
+							    else
+							    {
+							    	//Here I would make the user select a an account to delete from a combo box. If the account had a balance of 0 then it would be deleted. (I do not have time to do this)
+							    }
+							    
+							    
+					}
+		
+	}
+
+
+
 	protected void deleteCustomer() {
 
 		boolean found = true, loop = true;
