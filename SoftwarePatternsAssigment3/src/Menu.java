@@ -247,11 +247,7 @@ public class Menu extends JFrame{
 	
 	protected void deleteAccount() {
 
-		boolean found = true, loop = true;
-					
-					
-					
-					
+		boolean found = true;
 						 {
 							    Object customerID = JOptionPane.showInputDialog(frame1, "Customer ID of Customer from which you wish to delete an account");
 							    
@@ -261,22 +257,23 @@ public class Menu extends JFrame{
 							    	{
 							    		found = true;
 							    		customer = aCustomer; 
-							    		loop = false;
+							    		break
 							    	}					    	
 							    }
 							    
 							    if(found == false)
 							    {
 							    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
-							    	if (reply == JOptionPane.YES_OPTION) {
-							    		loop = true;
+							    	if (reply == JOptionPane.NO_OPTION) {
+							    		frame1.dispose();
+							    		admin();
+							    		break;
 							    	}
 							    	else if(reply == JOptionPane.NO_OPTION)
 							    	{
-							    		frame1.dispose();
-							    		loop = false;
+							    		
 							    	
-							    		admin();
+							    		
 							    	}
 							    }  
 							    else
