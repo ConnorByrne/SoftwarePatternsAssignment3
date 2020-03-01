@@ -227,58 +227,7 @@ public class Menu extends JFrame{
 
 		deleteCustomer.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
-				boolean found = true, loop = true;
-				
-				if(customerList.isEmpty())
-				{
-					JOptionPane.showMessageDialog(null, "There are currently no customers to display. ");
-					dispose();
-					admin();
-				}
-				else
-				{
-					 {
-						    Object customerID = JOptionPane.showInputDialog(frame1, "Customer ID of Customer You Wish to Delete:");
-						    
-						    for (Customer aCustomer: customerList){
-						    	
-						    	if(aCustomer.getCustomerID().equals(customerID))
-						    	{
-						    		found = true;
-						    		customer = aCustomer; 
-						    		loop = false;
-						    	}					    	
-						    }
-						    
-						    if(found == false)
-						    {
-						    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
-						    	if (reply == JOptionPane.YES_OPTION) {
-						    		loop = true;
-						    	}
-						    	else if(reply == JOptionPane.NO_OPTION)
-						    	{
-						    		frame1.dispose();
-						    		loop = false;
-						    		
-						    		admin();
-						    	}
-						    }  
-						    else
-						    {
-						    	if(customer.getAccounts().size()>0)
-						    	{
-						    		JOptionPane.showMessageDialog(frame1, "This customer has accounts. \n You must delete a customer's accounts before deleting a customer " ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
-						    	}
-						    	else
-						    	{
-						    		customerList.remove(customer);
-						    		JOptionPane.showMessageDialog(frame1, "Customer Deleted " ,"Success.",  JOptionPane.INFORMATION_MESSAGE);
-						    	}
-						    }
-						    
-						    
-				}}
+				deleteCustomer();
 			}
 	     });		
 		
@@ -333,6 +282,66 @@ public class Menu extends JFrame{
 	     });		
 	}
 	
+	protected void deleteCustomer() {
+
+		boolean found = true, loop = true;
+		
+		if(customerList.isEmpty())
+		{
+			JOptionPane.showMessageDialog(null, "There are currently no customers to display. ");
+			dispose();
+			admin();
+		}
+		else
+		{
+			 {
+				    Object customerID = JOptionPane.showInputDialog(frame1, "Customer ID of Customer You Wish to Delete:");
+				    
+				    for (Customer aCustomer: customerList){
+				    	
+				    	if(aCustomer.getCustomerID().equals(customerID))
+				    	{
+				    		found = true;
+				    		customer = aCustomer; 
+				    		loop = false;
+				    	}					    	
+				    }
+				    
+				    if(found == false)
+				    {
+				    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
+				    	if (reply == JOptionPane.YES_OPTION) {
+				    		loop = true;
+				    	}
+				    	else if(reply == JOptionPane.NO_OPTION)
+				    	{
+				    		frame1.dispose();
+				    		loop = false;
+				    		
+				    		admin();
+				    	}
+				    }  
+				    else
+				    {
+				    	if(customer.getAccounts().size()>0)
+				    	{
+				    		JOptionPane.showMessageDialog(frame1, "This customer has accounts. \n You must delete a customer's accounts before deleting a customer " ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
+				    	}
+				    	else
+				    	{
+				    		customerList.remove(customer);
+				    		JOptionPane.showMessageDialog(frame1, "Customer Deleted " ,"Success.",  JOptionPane.INFORMATION_MESSAGE);
+				    	}
+				    }
+				    
+				    
+		}}
+	
+		
+	}
+
+
+
 	protected void account() {
 
 		frame1.dispose();
