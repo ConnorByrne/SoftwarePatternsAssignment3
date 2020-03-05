@@ -18,24 +18,24 @@ import java.util.Date;
 
 public class MainMenu extends Menu{
 	
-//	//Admin this = new Admin(new ArrayList<Customer>(), 0, null, new CustomerAccount());
-//	private ArrayList<Customer> customerList = new ArrayList<Customer>();
-//    private int position = 0;
-//	private String password;
-//	private Customer customer = null;
-//	private CustomerAccount acc = new CustomerAccount();
-//	JFrame frame1, frame2;
-//	 JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
-//	 JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
-//		JLabel customerIDLabel, passwordLabel;
-//		JTextField customerIDTextField, passwordTextField;
-//	Container content;
-//		Customer e;
-//
-//
-//	 JPanel panel2;
-//		JButton add;
-//		String 	PPS,firstName,surname,DOB,CustomerID;
+	//Admin this = new Admin(new ArrayList<Customer>(), 0, null, new CustomerAccount());
+	private ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private int position = 0;
+	private String password;
+	private Customer customer = null;
+	private CustomerAccount acc = new CustomerAccount();
+	JFrame frame1, frame2;
+	 JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
+	 JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
+		JLabel customerIDLabel, passwordLabel;
+		JTextField customerIDTextField, passwordTextField;
+	Container content;
+		Customer e;
+
+
+	 JPanel panel2;
+		JButton add;
+		String 	PPS,firstName,surname,DOB,CustomerID;
 
 	public static void main(String[] args)
 	{
