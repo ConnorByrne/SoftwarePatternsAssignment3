@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainMenu extends Menu{
+public class MainMenu extends JFrame{
 	
 	//Admin this = new Admin(new ArrayList<Customer>(), 0, null, new CustomerAccount());
 	private ArrayList<Customer> customerList = new ArrayList<Customer>();
@@ -1677,7 +1677,18 @@ public class MainMenu extends Menu{
 	    
 	    
 	
-		
+	public static boolean isNumeric(String str)  // a method that tests if a string is numeric
+	{  
+	  try  
+	  {  
+	    double d = Double.parseDouble(str);  
+	  }  
+	  catch(NumberFormatException nfe)  
+	  {  
+	    return false;  
+	  }  
+	  return true;  
+	}
 	
 
 }
