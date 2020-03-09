@@ -18,15 +18,6 @@ import java.util.Date;
 
 public class MainMenu extends Menu{
 	
-	//Admin this = new Admin(new ArrayList<Customer>(), 0, null, new CustomerAccount());
-	
-
-	public static void main(String[] args)
-	{
-		MainMenu driver = new MainMenu();
-		driver.menuStart();
-	}
-	
 	MainMenu(){
 		menuStart();
 	}
@@ -105,18 +96,6 @@ public class MainMenu extends Menu{
 				
 			});frame1.setVisible(true);	
 	}
-
-
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
 	public void newCustomerFrame() {
 
 		frame1.dispose();		
